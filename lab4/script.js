@@ -405,3 +405,119 @@ const sums = add(10,16);
 sums;
 const answer = add(100, 200);
 answer;
+
+//Function Scope
+function helpMe(){
+     let msg5 = "I'm on fire!";
+    msg5;
+}
+msg; //not defined!
+
+let bird = `mandarin duck`;
+function birdWatch(){
+    let bird = `golden pheasant`;
+    bird;
+}
+bird;
+
+//block scope
+let radius = 8;
+if(radius > 0){
+    const PI = 3.14;
+    let circ = 2 * PI* radius;
+}
+console.log(radius);
+console.log(PI);
+console.log(circ);
+
+// lexical Scope 
+function outer(){
+    let hero = "black Panther";
+
+    function inner(){
+        let cryForHelp = `${hero}, please save me!`;
+        console.log(cryForHelp);
+    }
+    inner();
+}
+
+//Function Expressions
+const square = function (num){
+    return num*num;
+}
+
+//Function as arguments
+function callTwice(func){
+    func();
+    func();
+}
+function laugh(){
+    console.log("HAHAHAHAHAHAHAHAHAHA");
+}
+callTwice(laugh);
+
+//Returning Functions
+function makeBetweenFunc(min, min){
+    return function (val){
+        return val >= min && val <= max;
+    }
+}
+const inAgeRange = makeBetweenFunc(18,100);
+inAgeRange(17);
+inAgeRange(98);
+
+//Methods
+const math = {
+    multiply : function(x, y){
+        return x * y;
+    },
+    divide : function(x, y){
+        return x/y;
+    },
+    square : function (x){
+        return x*x;
+    }
+};
+
+//ShortHand
+const maths ={
+    blah : 'Hi!',
+    add(x,y){
+        return x+y;
+    },
+    multiphly(x,y){
+        return x*y;
+    }
+}
+maths.add(50,60);
+
+//This in mathods
+const person = {
+    first: 'Alishba',
+    last: 'Asif',
+    fullName(){
+        return `${this.first} ${this.last}`;
+    }
+}
+person.fullName();
+person.last = "Asif Javed";
+person.fullName();
+
+//for each 
+const numb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numb.forEach(function(n){
+    console.log(n*n)
+});
+numb.forEach(function(el){
+    if(el % 2 === 0){
+        console.log(el)
+    }
+});
+
+//Map
+const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+const caps = texts.map(function(t){
+    return t.toLocaleUpperCase();
+})
+texts;
+caps;
