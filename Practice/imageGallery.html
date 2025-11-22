@@ -1,0 +1,60 @@
+<!-- Image Gallery with Click Preview -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#preview {
+    width: 400px;
+    height: 300px;
+    border: 2px solid #333;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.gallery img {
+    width: 100px;
+    height: 80px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: border 0.2s;
+}
+
+.gallery img:hover {
+    border: 2px solid #007BFF;
+}
+    </style>
+ </head>
+ <body>
+    <h1>Image Gallery </h1>
+
+    <img id="preview" src="https://img.freepik.com/free-photo/portrait-happy-smiling-woman-standing-square-sunny-summer-spring-day-outside-cute-smiling-woman-looking-you-attractive-young-girl-enjoying-summer-filtered-image-flare-sunshine_231208-6734.jpg?semt=ais_hybrid&w=740&q=80" alt="previewImg">
+
+    <div class="gallery">
+        <img src="https://wallpapers.com/images/featured/cute-anime-profile-pictures-k6h3uqxn6ei77kgl.jpg" alt="galleryImg1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx5TAdMh5-VFZgd7hxtYmBhi7NartOHMNn_A&s" alt="galleryImg2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyhS-6zSzJXwHdydQspB6oaTUOx2jL6DrqUA&s" alt="galleryImg3">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUFdE77mtG7M4avXmJ4ruMrknlxpBbhDgWvw&s" alt="galleryImg4">
+    </div>
+
+    <script>
+        const preview = document.getElementById("preview");
+        const galleryImages = document.querySelectorAll(".gallery img");
+        galleryImages.forEach(function(img) {
+            img.addEventListener("click", function(){
+                preview.src = this.src;
+                console.log("Preview updated to:", this.alt);
+            });
+        });
+    </script>
+ </body>
+ </html>
