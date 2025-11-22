@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        .completed { text-decoration: line-through; color: gray; }
+        .active { background-color: lightgreen; padding: 5px; }
+        .highlight { border: 2px solid orange; }
+        .hidden { display: none; }
+        ul li { cursor: pointer; padding: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Favourite Animated Movies</h1>
+    <ul id="movie-list">
+        <li>Kung Fu Panda</li>
+        <li>Wish Dragon</li>
+        <li>Tom and Jerry</li>
+    </ul>
+    <input type="text" id="movie-input" placeholder="Add a new movie">
+    <button id="add-btn">Add</button>
+    <button id="clone-btn">Clone First Movie</button>
+    <div id="box" class="hidden">I am a box</div>
+    <button id="toggle-box">Toggle Box Classes</button>
+    <p id="welcome"></p>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV</title>
+</head>
+<body>
+  <h1>Personal CV Form</h1>
+  <p>Please fill out all sections carefully.</p>
+  <form>
+    <h2>Part 1: Personal Details</h2>
+
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter your first name" required maxlength="30"><br><br>
+
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter your last name" required maxlength="30"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example123@email.com" required><br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="+92XXXXXXXXXX" pattern="^\+?[0-9]{10,13}$" required><br><br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="Male" required>
+    <label for="male">Male</label><br>
+
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label><br>
+
+    <input type="radio" id="otherGender" name="gender" value="Other">
+    <label for="otherGender">Other</label><br><br>
+
+    <label for="marital">Marital Status:</label>
+    <select id="marital" name="marital" required>
+      <option value="">--Select--</option>
+      <option value="Single">Single</option>
+      <option value="Married">Married</option>
+      <option value="Divorced">Divorced</option>
+      <option value="Separated">Separated</option>
+    </select><br><br>
+
+    <h2>Part 2: Address Details</h2>
+
+    <label for="street">Street Address:</label>
+    <input type="text" id="street" name="street" placeholder="e.g. 123 Main Street" required maxlength="100"><br><br>
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" placeholder="e.g. Lahore" required maxlength="50"><br><br>
+
+    <label for="state">State/Province:</label>
+    <select id="state" name="state" required>
+      <option value="">--Select--</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Sindh">Sindh</option>
+      <option value="KPK">Khyber Pakhtunkhwa</option>
+      <option value="Balochistan">Balochistan</option>
+    </select><br><br>
+
+    <label for="postal">Postal Code:</label>
+    <input type="text" id="postal" name="postal" pattern="[0-9]{5}" placeholder="e.g. 54000" maxlength="10" required><br><br>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="">-- Select Country --</option>
+      <option value="Pakistan">Pakistan</option>
+      <option value="India">India</option>
+      <option value="USA">United States</option>
+      <option value="UK">United Kingdom</option>
+      <option value="UAE">UAE</option>
+    </select><br><br>
+
+    <p>Address Type:</p>
+    <input type="radio" id="home" name="addressType" value="Home" required>
+    <label for="home">Home</label><br>
+
+    <input type="radio" id="work" name="addressType" value="Work">
+    <label for="work">Work</label><br>
+
+    <input type="radio" id="other" name="addressType" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <h2>Part 3: Education and Employment</h2>
+
+    <label for="education">Highest Level of Education:</label>
+    <select id="education" name="education" required>
+      <option value="">--Select Education Level--</option>
+      <option value="High School">High School</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Bachelors">Bachelor’s Degree</option>
+      <option value="Masters">Master’s Degree</option>
+      <option value="PhD">PhD</option>
+      <option value="Other">Other</option>
+    </select><br><br>
+
+    <label for="occupation">Current Occupation:</label>
+    <input type="text" id="occupation" name="occupation" placeholder="e.g. Software Engineer" maxlength="50"><br><br>
+
+    <label for="employer">Current Employer:</label>
+    <input type="text" id="employer" name="employer" placeholder="e.g. ABC Company" maxlength="50"><br><br>
+
+    <label for="experience">Years of Experience:</label>
+    <input type="number" id="experience" name="experience" min="0" max="50" placeholder="e.g. 3"><br><br>
+
+    <h2>Part 4: Preferences and Interests</h2>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <p>Hobbies:</p>
+    <input type="checkbox" id="reading" name="hobby" value="Reading">
+    <label for="reading">Reading</label><br>
+
+    <input type="checkbox" id="writing" name="hobby" value="Writing">
+    <label for="writing">Writing</label><br>
+
+    <input type="checkbox" id="sports" name="hobby" value="Sports">
+    <label for="sports">Sports</label><br>
+
+    <input type="checkbox" id="music" name="hobby" value="Music">
+    <label for="music">Music</label><br>
+
+    <input type="checkbox" id="travel" name="hobby" value="Travel">
+    <label for="travel">Travel</label><br>
+
+    <input type="checkbox" id="photo" name="hobby" value="Photography">
+    <label for="photo">Photography</label><br><br>
+
+    <p>How did you hear about us?</p>
+    <input type="radio" id="social" name="source" value="Social Media" required>
+    <label for="social">Social Media</label><br>
+
+    <input type="radio" id="friend" name="source" value="Friend/Family">
+    <label for="friend">Friend/Family</label><br>
+
+    <input type="radio" id="search" name="source" value="Online Search">
+    <label for="search">Online Search</label><br>
+
+    <input type="radio" id="otherSource" name="source" value="Other">
+    <label for="otherSource">Other</label><br><br>
+
+    <label for="goals">What are your goals?</label><br>
+    <textarea id="goals" name="goals" rows="4" cols="50" placeholder="Describe your personal or career goals..."></textarea><br><br>
+
+    <h2>Part 5: Additional Information</h2>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" cols="60" placeholder="Write a short message about yourself..."></textarea><br><br>
+
+    <label for="resume">Upload Resume:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx"><br><br>
+
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the Terms and Conditions</label><br><br>
+
+    <input type="checkbox" id="subscribe" name="subscribe">
+    <label for="subscribe">Subscribe to Newsletter</label><br><br>
+
+    <input type="reset" value="Reset Form">
+    <input type="submit" value="Submit Form">
+  </form>
+
+  <footer>
+    <hr>
+    <p> HTML CV Assignment</p>
+  </footer>
+
+</body>
+</html>

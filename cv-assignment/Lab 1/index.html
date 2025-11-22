@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Tags</title>
+</head>
+<body>
+  <header>
+    <h1>HTML Tags Pratice</h1>
+    <nav>
+      <ul>
+        <li><a href="#text">Text Tags</a></li>
+        <li><a href="#media">Media Tags</a></li>
+        <li><a href="#forms">Form Tags</a></li>
+        <li><a href="#tables">Table Tags</a></li>
+        <li><a href="#semantic">Semantic Tags</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="text">
+    <h2>Text Tags</h2>
+    <p>This is a <b>bold</b> word, <strong>strong</strong> word, <i>italic</i>, <em>emphasized</em>, <mark>highlighted</mark>, <small>small text</small>, <del>deleted</del>, <ins>inserted</ins>, <sub>subscript</sub>, <sup>superscript</sup>, <u>underlined</u>.</p>
+    <p>Abbreviations: <abbr title="Cascading Style Sheets">CSS</abbr>, <abbr title="Hyper Text Markup Language">HTML</abbr></p>
+    <p>Cite example: <cite>MDN Web Docs</cite></p>
+    <p>Keyboard input: <kbd>Ctrl + C</kbd>, Sample code: <code>console.log('Hello')</code></p>
+    <p>Variable example: <var>x</var>, Sample phrase: <samp>Sample Output</samp>, <q>Inline quotation</q>, <blockquote>Blockquote example</blockquote></p>
+  </section>
+  <section id="media">
+    <h2>Media Tags</h2>
+    <p>Audio Example:</p>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <p>Embedded YouTube Video:</p>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/HcOc7P5BMi4"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <p>Image Example: <img src="images.jpg" alt="Image"></p>
+    <section>
+  <section id="forms">
+    <h2>Form Tags</h2>
+    <form action="/submit" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br><br>
+
+      <label for="car">Select your car:</label>
+      <select id="car" name="car">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+      </select><br><br>
+
+      <label for="bio">Bio:</label><br>
+      <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+
+      <input type="checkbox" id="subscribe" name="subscribe" checked>
+      <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+      <button type="submit">Submit</button>
+      <input type="reset" value="Reset Form">
+    </form>
+  </section>
+  <section id="tables">
+    <h2>Table Tags</h2>
+    <table border="1">
+      <caption>Sample Table</caption>
+      <thead>
+        <tr><th>Name</th><th>Age</th><th>City</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ali</td><td>25</td><td>Lahore</td></tr>
+        <tr><td>Fatima</td><td>23</td><td>Karachi</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="3">End of Table</td></tr>
+      </tfoot>
+    </table>
+  </section>
+  <section id="semantic">
+    <h2>Semantic Tags</h2>
+    <article>
+      <h3>Article Tag</h3>
+      <p>This is an article about HTML5 semantic tags.</p>
+    </article>
+    <aside>
+      <h3>Aside Tag</h3>
+      <p>This content is related to the main content but separate.</p>
+    </aside>
+    <details>
+      <summary>Details Tag Example</summary>
+      <p>Here is some hidden content revealed on click.</p>
+    </details>
+    <figure>
+      <img src="images (1).jpg" alt="Sample Image">
+      <figcaption>Figure caption</figcaption>
+    </figure>
+    <footer>
+      <p> HTML Tags Practice End</p>
+    </footer>
+    <section>
+      <h3>Nested Section</h3>
+      <p>This is a nested section inside the semantic section.</p>
+    </section>
+    <main>
+      <p>Main content goes here.</p>
+    </main>
+    <nav>
+      <p>Navigation menu example inside semantic section.</p>
+    </nav>
+    <summary>Summary tag outside details</summary>
+    <time datetime="2025-11-01">November 1, 2025</time>
+    <progress value="70" max="100">70%</progress>
+    <meter value="2" min="0" max="10">2 out of 10</meter>
+  </section>
+  <address>
+    <p>Contact us at <a href="mailto:alishbaasif1266@gmail.com">Email</a> or call <a href="tel:+123456789">+123456789</a></p>
+  </address>
+</body>
+</html>
+
