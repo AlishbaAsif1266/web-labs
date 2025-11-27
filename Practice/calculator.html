@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            width: 200px;
+            font-size: 20px;
+            padding: 5px;
+            text-align: right;
+        }
+        button {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Simple Calculator</h2>
+<input type="text" id="display" readonly>
+
+<br>
+
+<!-- Calculator buttons -->
+<button onclick="appendNumber('7')">7</button>
+<button onclick="appendNumber('8')">8</button>
+<button onclick="appendNumber('9')">9</button>
+<button onclick="appendOperator('/')">/</button>
+<br>
+<button onclick="appendNumber('4')">4</button>
+<button onclick="appendNumber('5')">5</button>
+<button onclick="appendNumber('6')">6</button>
+<button onclick="appendOperator('*')">*</button>
+<br>
+<button onclick="appendNumber('1')">1</button>
+<button onclick="appendNumber('2')">2</button>
+<button onclick="appendNumber('3')">3</button>
+<button onclick="appendOperator('-')">-</button>
+<br>
+<button onclick="appendNumber('0')">0</button>
+<button onclick="appendOperator('.')">.</button>
+<button onclick="calculate()">=</button>
+<button onclick="appendOperator('+')">+</button>
+<br>
+<button onclick="clearDisplay()">C</button>
+
+<script>
+    const display = document.getElementById('display');
+
+    function appendNumber(num) {
+        display.value += num;
+    }
+
+    function appendOperator(op) {
+        display.value += op;
+    }
+
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>

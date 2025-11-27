@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tab Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid #333;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab.active {
+            background: #007BFF;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 0 5px 5px 5px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tab Navigation Example</h1>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="1">Tab 1</div>
+        <div class="tab" data-tab="2">Tab 2</div>
+        <div class="tab" data-tab="3">Tab 3</div>
+    </div>
+
+    <div class="tab-contents">
+        <div class="tab-content active" data-tab="1">Content for Tab 1</div>
+        <div class="tab-content" data-tab="2">Content for Tab 2</div>
+        <div class="tab-content" data-tab="3">Content for Tab 3</div>
+    </div>
+
+    <script>
+        // Step 1: Select all tabs and tab content
+        const tabs = document.querySelectorAll(".tab");
+        const contents = document.querySelectorAll(".tab-content");
+
+        // Step 2: Loop through each tab and add click event
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+                const target = this.dataset.tab; // Get the data-tab attribute
+
+                // Step 3: Remove 'active' from all tabs and contents
+                tabs.forEach(t => t.classList.remove("active"));
+                contents.forEach(c => c.classList.remove("active"));
+
+                // Step 4: Add 'active' to clicked tab and corresponding content
+                this.classList.add("active");
+                document.querySelector(`.tab-content[data-tab="${target}"]`).classList.add("active");
+
+                console.log("Active tab:", target);
+            });
+        });
+    </script>
+</body>
+
+</html>

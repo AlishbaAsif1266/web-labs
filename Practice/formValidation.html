@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <style>
+        body {
+    background: #bdf8ff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 450px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px #999;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+}
+
+.gender, .courses {
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: teal;
+    color: white;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#msg {
+    margin-top: 15px;
+    font-weight: bold;
+    color: red;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration Form</h2>
+
+    <form id="regForm">
+
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Enter name">
+
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="example@mail.com">
+
+        <label>Phone:</label>
+        <input type="text" id="phone" placeholder="0300XXXXXXX">
+
+        <label>Gender:</label>
+        <div class="gender">
+            <input type="radio" name="gender" value="Male"> Male 
+            <input type="radio" name="gender" value="Female"> Female 
+            <input type="radio" name="gender" value="Other"> Other
+        </div>
+
+        <label>Department:</label>
+        <select id="dept">
+            <option value="">Select</option>
+            <option value="CSE">CSE</option>
+            <option value="EEE">EEE</option>
+            <option value="BBA">BBA</option>
+        </select>
+
+        <label>Courses:</label>
+        <div class="courses">
+            <input type="checkbox" class="course"> C  
+            <input type="checkbox" class="course"> C++  
+            <input type="checkbox" class="course"> Java  
+            <input type="checkbox" class="course"> AI  
+        </div>
+
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <p id="msg"></p>
+</div>
+
+<script>
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+    e.preventDefault();  // stop page refresh
+    let msg = document.getElementById("msg");
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let dept = document.getElementById("dept").value;
+
+    let genderSelected = document.querySelector("input[name='gender']:checked");
+    let courseSelected = document.querySelector(".course:checked");
+
+    // BASIC VALIDATIONS
+    if (name === "") {
+        msg.textContent = "Name is required.";
+        return;
+    }
+
+    if (email === "") {
+        msg.textContent = "Email is required.";
+        return;
+    }
+
+    // simple email pattern
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        msg.textContent = "Invalid email format.";
+        return;
+    }
+
+    // phone: Pakistani format (11 digits)
+    let phonePattern = /^[0-9]{11}$/;
+    if (!phonePattern.test(phone)) {
+        msg.textContent = "Phone must be 11 digits.";
+        return;
+    }
+
+    if (!genderSelected) {
+        msg.textContent = "Please select gender.";
+        return;
+    }
+
+    if (dept === "") {
+        msg.textContent = "Please select a department.";
+        return;
+    }
+
+    if (!courseSelected) {
+        msg.textContent = "Select at least one course.";
+        return;
+    }
+
+    // SUCCESS
+    msg.style.color = "green";
+    msg.textContent = "Form submitted successfully!";
+});
+</script>
+</body>
+</html>

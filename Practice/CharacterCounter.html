@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+textarea {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#charCount {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+#charCount.warning {
+    color: red;
+}
+    </style>
+</head>
+<body>
+    <h1>Character Counter </h1>
+    <textarea id="msg" placeholder="Type your msg ........"></textarea>
+    <div id="charCount">Characters remaining: 100</div>
+
+    <script>
+        const msg = document.getElementById('msg');
+        const charCount = document.getElementById('charCount');
+
+        const maxChars = 100;
+
+        msg.addEventListener("input", function (){
+            const remaining = maxChars - msg.value.length;
+
+            charCount.textContent = "Characters remaining: " + remaining;
+            
+            if(remaining < 0){
+                charCount.classList.add("warning");
+            } else {
+                charCount.classList.remove("warning");
+            }
+        });
+    </script>
+</body>
+</html>
