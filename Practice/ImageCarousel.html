@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #img {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Image Carousel</h2>
+    <img id="img" src="https://wallpapers.com/images/featured/cute-anime-profile-pictures-k6h3uqxn6ei77kgl.jpg" width="300">
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+    <script>
+        let images = ["img1,jpg", "img2.jpg", "img3.jpg"];
+        let index = 0;
+
+        document.getElementById("next").addEventListener("click", () => {
+            index = (index + 1) % images.length;
+            document.getElementById("img").src = images[index];
+        });
+        document.getElementById("prev").addEventListener("click", () => {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("img").src = images[index];
+        });
+    </script>
+</body>
+
+</html>
